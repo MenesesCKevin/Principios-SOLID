@@ -1,20 +1,22 @@
 namespace OpenClose
 {
-    public class EmployeeFullTime : ISalary
+    public class EmployeeContractor : ISalary
     {
         public string Fullname { get; set; }
         public int HoursWorked { get; set; }
  
-        public EmployeeFullTime(string fullname, int hoursWorked)
+        public EmployeeContractor(string fullname, int hoursWorked)
         {
             Fullname = fullname;
             HoursWorked = hoursWorked;
         }
+ 
         public void CalculateSalary()
         {
-            decimal hourValue = 30000M;
+            decimal hourValue = 15000M;
             decimal salary = hourValue * HoursWorked;
-            Console.WriteLine($"Empleado: {Fullname}, Pago: {salary:C1}");
+            Console.WriteLine($"Empleado: {Fullname}, Pago: {salary:C1}");            
         }
+ 
     }
 }
