@@ -1,3 +1,4 @@
+using DependencyInversion;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -19,6 +20,9 @@ if (app.Environment.IsDevelopment())
         options.RoutePrefix = string.Empty;
     });
 }
+
+builder.Services.AddScoped<ILogbook, Logbook>();
+builder.Services.AddScoped<IStudentRepository,StudentRepository>();
 
 app.UseHttpsRedirection();
 
